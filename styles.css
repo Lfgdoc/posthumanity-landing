@@ -1,6 +1,9 @@
+/* Base layout preserved; neon-blue typing for brand and hero title with flicker loop */
 *{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#0a0a0f;color:#e5e7eb;font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial}
 a{color:inherit;text-decoration:none}
 .container{width:100%;max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* GLOBAL BG */
 body::before{content:"";position:fixed;inset:0;background:url('assets/bg.jpg') center/cover no-repeat fixed;z-index:-3;filter:grayscale(30%) contrast(1.1) brightness(.55)}
 .bg-filter{position:fixed;inset:0;background:radial-gradient(1200px 600px at 20% 0%, rgba(124,58,237,.22), transparent), radial-gradient(1000px 600px at 80% 30%, rgba(16,185,129,.16), transparent);z-index:-2;pointer-events:none}
 body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradient(transparent,transparent 2px,rgba(0,0,0,.12) 3px);mix-blend-mode:soft-light;opacity:.35;z-index:-1;pointer-events:none}
@@ -9,23 +12,33 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
 .nav{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(10,10,15,.6);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
 
-/* Neon typing brand */
-.brand-type{font-weight:900;letter-spacing:.06em;font-size:20px;text-transform:uppercase;color:#9ae6ff;text-shadow:0 0 12px rgba(56,189,248,.55), 0 0 24px rgba(56,189,248,.25)}
+/* Neon typed style shared */
+.type-blue{font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#9ae6ff;text-shadow:0 0 12px rgba(56,189,248,.55), 0 0 24px rgba(56,189,248,.25)}
+.brand-type{font-size:20px}
+.hero-type{font-size:clamp(36px,6.5vw,72px);margin:0 0 12px}
 .cursor{display:inline-block;margin-left:6px;color:#9ae6ff;text-shadow:0 0 6px rgba(56,189,248,.9);animation:blink 1s step-end infinite}
 @keyframes blink{50%{opacity:0}}
-.pages-hint{opacity:.9;display:flex;gap:14px;font-weight:700}
 
-/* HERO */
+/* Flicker (3x over 5s) */
+.flicker{animation:flicker 5s ease-in-out 1}
+@keyframes flicker{
+  0%,100%{opacity:1;filter:none}
+  10%{opacity:.2;filter:brightness(1.6)}
+  20%{opacity:1}
+  40%{opacity:.15;filter:contrast(1.5) saturate(1.2)}
+  50%{opacity:1}
+  70%{opacity:.25;filter:brightness(1.5)}
+  80%{opacity:1}
+}
+
+/* Content sections (unchanged) */
 .hero{padding:112px 0 72px}
 .hero-inner{display:flex;flex-direction:column;align-items:center;text-align:center}
-h1{font-size:clamp(36px,6.5vw,72px);line-height:1.05;margin:0 0 12px;text-transform:uppercase}
 .subtitle{max-width:880px;opacity:.92}
 .cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-
 .btn{padding:12px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);cursor:pointer;display:inline-block;transition:transform .2s ease, background .2s ease}
 .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.12)}
 .btn.primary{background:linear-gradient(135deg, rgba(124,58,237,.45), rgba(16,185,129,.35));border-color:rgba(255,255,255,.28)}
-
 .section{padding:64px 0;border-top:1px solid rgba(255,255,255,.06);background:rgba(10,10,15,.38)}
 .section-title{font-size:28px;margin:0 0 16px}
 .copy{opacity:.9}
@@ -36,11 +49,3 @@ h1{font-size:clamp(36px,6.5vw,72px);line-height:1.05;margin:0 0 12px;text-transf
 .form input{padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#e5e7eb;min-width:280px}
 .hint{opacity:.65;margin-top:8px}
 .footer{padding:28px 0;border-top:1px solid rgba(255,255,255,.06);background:rgba(10,10,15,.6);text-align:center;opacity:.9}
-
-/* Glitch accent for hero H1 only */
-.glitch{position:relative;display:inline-block}
-.glitch::before,.glitch::after{content:attr(data-text);position:absolute;left:0;top:0;overflow:hidden;clip-path:inset(0 0 0 0)}
-.glitch::before{transform:translate(2px,-2px);text-shadow:-2px 0 #7c3aed;animation:gl1 2s infinite linear alternate-reverse}
-.glitch::after{transform:translate(-2px,2px);text-shadow:2px 0 #10b981;animation:gl2 2.3s infinite linear alternate-reverse}
-@keyframes gl1{0%{clip-path:inset(0 0 90% 0)}20%{clip-path:inset(0 0 10% 0)}40%{clip-path:inset(0 0 40% 0)}60%{clip-path:inset(0 0 60% 0)}80%{clip-path:inset(0 0 20% 0)}100%{clip-path:inset(0 0 80% 0)}}
-@keyframes gl2{0%{clip-path:inset(80% 0 0 0)}20%{clip-path:inset(10% 0 0 0)}40%{clip-path:inset(60% 0 0 0)}60%{clip-path:inset(30% 0 0 0)}80%{clip-path:inset(70% 0 0 0)}100%{clip-path:inset(0 0 0 0)}}
