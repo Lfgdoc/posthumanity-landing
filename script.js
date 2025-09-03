@@ -1,7 +1,6 @@
-// Update year + simple link placeholders
 document.getElementById('year').textContent = new Date().getFullYear();
-
-// 👉 Substitua abaixo pelos links reais quando tiver:
-document.getElementById('me-link').href = '#'; // ex.: https://magiceden.io/ordinals/marketplace/posthumanity
-document.getElementById('x-link').href = '#';  // ex.: https://x.com/posthumanity_xyz
-document.getElementById('discord-link').href = '#'; // ex.: https://discord.gg/SEU-CODIGO
+// Substitua pelos seus links reais quando quiser
+const LINKS = { magicEden:'#', twitter:'#', discord:'#' };
+document.querySelector('[data-link=me]').href = LINKS.magicEden;
+document.querySelector('[data-link=x]').href = LINKS.twitter;
+document.querySelector('[data-link=discord]').href = LINKS.discord;
