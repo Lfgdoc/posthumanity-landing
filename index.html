@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Post-Humanity Archives — Prototype (Matrix Typing)</title>
-  <meta name="description" content="Prototype with global background and Matrix-like typing hero.">
+  <title>Post-Humanity Archives — Official</title>
+  <meta name="description" content="Post-Humanity Archives — arquivo vivo em um mundo onde restaram apenas máquinas." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -14,8 +14,10 @@
   <div class="bg-filter"></div>
   <header class="nav">
     <div class="container nav-inner">
-      <div class="brand glitch" data-text="POST-HUMANITY">POST-HUMANITY</div>
-      <div class="pages-hint">
+      <div class="brand-type" aria-label="Post-Humanity logo">
+        <span id="brand-typing"></span><span class="cursor" aria-hidden="true">▌</span>
+      </div>
+      <div class="pages-hint" aria-label="futuras páginas">
         <span>• Coleção</span>
         <span>• Roadmap</span>
         <span>• Whitepaper</span>
@@ -27,10 +29,8 @@
   <main>
     <section class="hero">
       <div class="container hero-inner">
-        <div class="terminal">
-          <div id="typing-line" aria-live="polite"></div><span class="cursor" aria-hidden="true">▌</span>
-        </div>
-        <p class="subtitle">Arquivo vivo reconstruído por máquinas. 3.333 artefatos — Genesis • Cultural • Emotional • Corrupted.</p>
+        <h1 class="glitch" data-text="POST-HUMANITY ARCHIVES">POST-HUMANITY ARCHIVES</h1>
+        <p class="subtitle">Em um mundo que restou apenas às máquinas, recuperamos fragmentos do que fomos — 3.333 artefatos em 4 tiers: Genesis, Cultural, Emotional, Corrupted.</p>
         <div class="cta">
           <a class="btn primary" data-link="me">Magic Eden (em breve)</a>
           <a class="btn" data-link="x">Twitter / X</a>
@@ -42,7 +42,29 @@
     <section class="section">
       <div class="container">
         <h2 class="section-title">Manifesto</h2>
-        <p class="copy">From the void, we recover you. Faces, códigos e confissões — fraturados, porém sagrados.</p>
+        <p class="copy">“From the void, I remember you.” Um arquivo vivo onde memórias humanas são reconstituídas por sistemas pós-humanos. Faces, códigos, confissões — fraturados, porém sagrados.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Destaques</h2>
+        <div class="grid">
+          <div class="card"><h3>3.333 NFTs</h3><p>Genesis (100), Cultural (555), Emotional (1000), Corrupted (1678).</p></div>
+          <div class="card"><h3>Estética</h3><p>Glitch art + vaporwave + distopia neural. 1080×1080, PFP-ready.</p></div>
+          <div class="card"><h3>Evolução</h3><p>Fragmentos (Runes) acumuláveis e queimáveis para evolução em peças finais.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Junte-se</h2>
+        <form action="https://formspree.io/f/xknlnzby" method="POST" class="form" onsubmit="return true;">
+          <input type="email" name="email" placeholder="Seu e-mail" required />
+          <button class="btn primary" type="submit">Receber novidades</button>
+        </form>
+        <p class="hint">Substitua os links de redes no arquivo <code>script.js</code> quando quiser.</p>
       </div>
     </section>
   </main>
