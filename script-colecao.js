@@ -1,5 +1,5 @@
-// build: v8.7
-// Footer year
+// build: v8.8
+// Ano no footer
 const y = document.getElementById('year'); if (y) y.textContent = String(new Date().getFullYear());
 // Typing in header
 const b = document.getElementById('brand-typing');

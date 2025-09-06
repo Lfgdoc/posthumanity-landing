@@ -1,8 +1,8 @@
-// build: v8.7
-// Footer year
+// build: v8.8
+// Ano no footer
 const yearEl = document.getElementById('year'); if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-// Typing + flicker (header + hero)
+// Digitação + flicker (header + hero)
 const brandEl = document.getElementById('brand-typing');
 const heroEl  = document.getElementById('hero-typing');
 const BRAND_TEXT = 'POST-HUMANITY';
