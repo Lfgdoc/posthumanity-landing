@@ -1,8 +1,6 @@
-// build: v8.1
-// Ano no footer
+// build: v8.2
 document.getElementById('year')?.textContent = new Date().getFullYear().toString();
 
-// Digitação e flicker sincronizado (marca + título)
 const brandEl = document.getElementById('brand-typing');
 const heroEl  = document.getElementById('hero-typing');
 const BRAND_TEXT = 'POST-HUMANITY';
