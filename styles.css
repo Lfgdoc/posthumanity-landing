@@ -1,9 +1,9 @@
-/* build: v8.13 */
+/* build: v8.14 */
 *{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#0b0d12;color:#e5e7eb;font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial}
 a{color:inherit;text-decoration:none}
 .container{width:100%;max-width:1100px;margin:0 auto;padding:0 20px}
 
-/* Background */
+/* Background com imagem */
 body::before{
   content:"";position:fixed;inset:0;z-index:-3;
   background:
@@ -30,20 +30,20 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
 .flicker{animation:flicker 5s ease-in-out 1}
 @keyframes flicker{0%,100%{opacity:1;filter:none}10%{opacity:.2;filter:brightness(1.6)}20%{opacity:1}40%{opacity:.15;filter:contrast(1.5) saturate(1.2)}50%{opacity:1}70%{opacity:.25;filter:brightness(1.5)}80%{opacity:1}}
 
-/* HERO (overlay limited strictly here) */
+/* HERO — overlay limitado somente ao hero */
 .hero{padding:56px 0 22px}
 .limit-dark{position:relative}
 .limit-dark::before{
-  content:"";position:absolute;left:0;right:0;top:-64px;bottom:0;
+  content:"";position:absolute;left:0;right:0;top:-64px;bottom:0; /* termina exato no fim do hero */
   background:rgba(10,10,15,.82);z-index:-1;border-bottom:1px solid rgba(255,255,255,.06)
 }
 .hero-inner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
 
-/* Social row inside hero */
+/* Ícones dentro do hero (acima do CTA) e no rodapé */
 .social-row{display:flex;gap:14px;justify-content:center;margin-top:4px}
 .social{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);transition:transform .2s ease, background .2s ease;overflow:hidden}
 .social:hover{transform:translateY(-1px);background:rgba(255,255,255,.12)}
-.social svg{width:20px;height:20px;display:block}
+.social img{width:20px;height:20px;display:block}
 
 /* Sections */
 .section{padding:56px 0;border-top:1px solid rgba(255,255,255,.06);background:transparent}
