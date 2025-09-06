@@ -1,25 +1,22 @@
-// build: v8.12
-// Year + official links (data-link mapping)
+// build: v8.13
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Official links wired via data-link attributes
 const LINKS = {
-  magicEden: '#',
   twitter: 'https://x.com/PHA_NFT',
   discord: 'https://discord.gg/SA9eyW47',
+  magicEden: '#'
 };
-
-document.querySelectorAll('[data-link=me]').forEach(a => a.href = LINKS.magicEden);
 document.querySelectorAll('[data-link=x]').forEach(a => a.href = LINKS.twitter);
 document.querySelectorAll('[data-link=discord]').forEach(a => a.href = LINKS.discord);
+document.querySelectorAll('[data-link=me]').forEach(a => a.href = LINKS.magicEden);
 
-// Synchronized neon typing + 3x flicker loop for brand and hero
+// Typing + flicker
 const brandEl = document.getElementById('brand-typing');
 const heroEl  = document.getElementById('hero-typing');
 const BRAND_TEXT = 'POST-HUMANITY';
 const HERO_TEXT  = 'POST-HUMANITY ARCHIVES';
-const TYPE_DELAY = 60;
-const HOLD_AFTER_TYPE = 700;
-const LOOP_GAP = 500;
+const TYPE_DELAY = 60, HOLD = 700, GAP = 500;
 
 async function typeTo(el, text){
   if(!el) return;
@@ -29,22 +26,20 @@ async function typeTo(el, text){
     await new Promise(r=>setTimeout(r, TYPE_DELAY));
   }
 }
-async function flickerOnce(sel){
+async function flicker(sel){
   const el = document.querySelector(sel);
   if(!el) return;
   el.classList.add('flicker');
   await new Promise(r=>setTimeout(r, 5000));
   el.classList.remove('flicker');
 }
-async function runCycle(){
+async function loop(){
   await typeTo(brandEl, BRAND_TEXT);
-  await typeTo(heroEl,  HERO_TEXT);
-  await new Promise(r=>setTimeout(r, HOLD_AFTER_TYPE));
-  await flickerOnce('.brand-type');
-  await flickerOnce('.hero-type');
-  brandEl.textContent = '';
-  heroEl.textContent  = '';
-  await new Promise(r=>setTimeout(r, LOOP_GAP));
-  runCycle();
+  await typeTo(heroEl, HERO_TEXT);
+  await new Promise(r=>setTimeout(r, HOLD));
+  await flicker('.brand-type'); await flicker('.hero-type');
+  brandEl.textContent=''; heroEl.textContent='';
+  await new Promise(r=>setTimeout(r, GAP));
+  loop();
 }
-runCycle();
+loop();
