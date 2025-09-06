@@ -1,7 +1,5 @@
-// build: v8.8
-// Ano no footer
+// build: v8.9
 const y = document.getElementById('year'); if (y) y.textContent = String(new Date().getFullYear());
-// Typing in header
 const b = document.getElementById('brand-typing');
 const TXT = 'POST-HUMANITY';
 const D = 60, HOLD = 700, GAP = 500;
