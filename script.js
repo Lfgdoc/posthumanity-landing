@@ -1,4 +1,4 @@
-// build: v8.10
+// build: v8.11
 const yearEl = document.getElementById('year'); if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 const brandEl = document.getElementById('brand-typing');
 const heroEl  = document.getElementById('hero-typing');
