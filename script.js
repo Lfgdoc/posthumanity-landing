@@ -1,1 +1,1 @@
-// script v8.4
+// typing effect js v8.5

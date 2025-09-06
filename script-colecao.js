@@ -1,1 +1,1 @@
-// script-colecao v8.4
+// typing effect for colecao header v8.5
