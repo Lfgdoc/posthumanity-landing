@@ -1,7 +1,5 @@
-// build: v8.9
-// Footer year
+// build: v8.10
 const yearEl = document.getElementById('year'); if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-// Typing + flicker
 const brandEl = document.getElementById('brand-typing');
 const heroEl  = document.getElementById('hero-typing');
 const BRAND_TEXT = 'POST-HUMANITY';

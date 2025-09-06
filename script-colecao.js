@@ -1,4 +1,4 @@
-// build: v8.9
+// build: v8.10
 const y = document.getElementById('year'); if (y) y.textContent = String(new Date().getFullYear());
 const b = document.getElementById('brand-typing');
 const TXT = 'POST-HUMANITY';
