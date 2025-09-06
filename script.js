@@ -1,8 +1,8 @@
-// build: v8.6
-// Ano no footer (defensivo)
+// build: v8.7
+// Footer year
 const yearEl = document.getElementById('year'); if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-// Digitação (defensivo + loop)
+// Typing + flicker (header + hero)
 const brandEl = document.getElementById('brand-typing');
 const heroEl  = document.getElementById('hero-typing');
 const BRAND_TEXT = 'POST-HUMANITY';
@@ -14,12 +14,11 @@ async function typeTo(el, text){
   el.textContent='';
   for(let i=0;i<text.length;i++){
     el.textContent+=text[i];
-    // extra safety: yield control so painting occurs
     await new Promise(r=>setTimeout(r,TYPE_DELAY));
   }
 }
 async function flickerOnce(sel){
-  const el = document.querySelector(sel);
+  const el=document.querySelector(sel);
   if(!el) return;
   el.classList.add('flicker');
   await new Promise(r=>setTimeout(r,5000));
@@ -29,16 +28,10 @@ async function cycle(){
   await typeTo(brandEl, BRAND_TEXT);
   await typeTo(heroEl,  HERO_TEXT);
   await new Promise(r=>setTimeout(r,HOLD_AFTER_TYPE));
-  await flickerOnce('.brand-type');
-  await flickerOnce('.hero-type');
+  await flickerOnce('.brand-type'); await flickerOnce('.hero-type');
   if(brandEl) brandEl.textContent='';
   if(heroEl)  heroEl.textContent='';
   await new Promise(r=>setTimeout(r,LOOP_GAP));
   cycle();
 }
-// start only after DOM is really ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', cycle);
-} else {
-  cycle();
-}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', cycle); else cycle();
