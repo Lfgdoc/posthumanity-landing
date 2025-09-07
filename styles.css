@@ -33,10 +33,7 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
 /* HERO — overlay limitado somente aqui */
 .hero{padding:56px 0 22px}
 .limit-dark{position:relative}
-.limit-dark::before{
-  content:"";position:absolute;left:0;right:0;top:-64px;bottom:0;
-  background:rgba(10,10,15,.82);z-index:-1;border-bottom:1px solid rgba(255,255,255,.06)
-}
+.limit-dark::before{content:'';position:absolute;left:0;right:0;top:-64px;bottom:0;background:transparent;border:0}
 .hero-inner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
 
 /* Social row (ícones brancos) */
@@ -64,3 +61,15 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
 /* Footer */
 .footer{padding:24px 0;border-top:1px solid rgba(255,255,255,.06);background:rgba(10,10,15,.6);text-align:center;opacity:.95}
 .footer-inner{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap}
+
+
+/* Smaller collection cards */
+.tiers .tier-card{padding:12px;border-radius:14px}
+.tiers .frame{border-radius:10px}
+.tiers .frame img{max-height:280px;width:100%;height:auto;object-fit:cover}
+.tiers .tier-meta h3{font-size:18px}
+.tiers .attrs{font-size:14px}
+.tiers .desc{font-size:14px}
+@media(min-width:900px){
+  .tiers .frame img{max-height:260px}
+}
