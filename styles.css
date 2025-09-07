@@ -113,3 +113,8 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
   transition:background .2s, transform .2s;
 }
 .cta-button:hover { background:rgba(154,230,255,.3); transform:translateY(-1px); }
+
+/* Google Forms embed */
+.form-embed{max-width:900px;margin:8px auto 0;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.02)}
+.form-embed iframe{display:block;width:100%;height:900px}
+@media(max-width:768px){.form-embed iframe{height:1100px}}
