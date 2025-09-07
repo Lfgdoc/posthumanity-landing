@@ -79,3 +79,7 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
 @media(min-width:900px){
   .grid.tiers{grid-template-columns:1fr 1fr}
 }
+
+/* FORCE remove hero overlay */
+.hero.limit-dark::before{background:transparent !important;border:0 !important}
+.limit-dark::before{background:transparent !important;border:0 !important}
