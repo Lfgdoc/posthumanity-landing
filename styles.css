@@ -73,3 +73,9 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
 @media(min-width:900px){
   .tiers .frame img{max-height:260px}
 }
+
+/* 2x2 layout for collection on desktop */
+.grid.tiers{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:900px){
+  .grid.tiers{grid-template-columns:1fr 1fr}
+}
