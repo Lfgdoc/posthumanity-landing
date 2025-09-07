@@ -1,5 +1,5 @@
-// PHA_OK: site-roadmap-v1
-console.log('PHA_OK: site-roadmap-v1');
+// PHA_OK: site-whitepaper-v1
+console.log('PHA_OK: site-whitepaper-v1');
 const yearEl = document.getElementById('year'); if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Links
