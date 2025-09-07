@@ -58,3 +58,26 @@ async function loop(){
   loop();
 }
 loop();
+
+// v1g: hard-bind social links and robust click fallback
+(function(){
+  const map = {
+    x: 'https://x.com/PHA_NFT',
+    discord: 'https://discord.gg/SA9eyW47',
+    me: '#'
+  };
+  document.querySelectorAll('a.social[data-link]').forEach(a => {
+    const k = a.getAttribute('data-link');
+    const url = map[k] || '#';
+    // set attributes in case HTML is stale
+    a.setAttribute('href', url);
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener');
+    a.addEventListener('click', function(ev){
+      // in case something intercepts, force navigation
+      if (!url || url === '#') return; // keep placeholder
+      // if default prevented elsewhere, ensure open
+      setTimeout(() => { try { window.open(url, '_blank', 'noopener'); } catch(e){ location.href = url; } }, 0);
+    }, {capture:true});
+  });
+})();

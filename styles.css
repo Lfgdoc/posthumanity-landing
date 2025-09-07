@@ -95,3 +95,7 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
 
 /* Tooltip cue for "Mint" */
 .mint-soon{cursor:help; border-bottom:1px dotted rgba(154,230,255,.6); padding-bottom:2px}
+
+/* v1g: click safety */
+.hero-inner, .social-row{position:relative; z-index:6}
+.social-row a.social{pointer-events:auto}
