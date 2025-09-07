@@ -92,3 +92,6 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
 .wp .toc{border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 14px;background:rgba(255,255,255,.04);margin:10px 0 20px}
 .wp .toc a{display:inline-block;margin:4px 10px 4px 0;text-decoration:underline}
 .wp .callout{border-left:3px solid rgba(154,230,255,.9);padding:10px 12px;background:rgba(154,230,255,.08);border-radius:8px;margin:12px 0}
+
+/* Tooltip cue for "Mint" */
+.mint-soon{cursor:help; border-bottom:1px dotted rgba(154,230,255,.6); padding-bottom:2px}
