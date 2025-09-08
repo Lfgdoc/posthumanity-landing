@@ -84,7 +84,7 @@
         <!-- Waitlist — Direct HTML POST to Google Apps Script (no JS, no CORS) -->
         <iframe name="waitlist_iframe" style="display:none"></iframe>
         <form id="waitlist-form" class="form" style="max-width:900px;margin:8px auto 0;"
-              action="https://script.google.com/macros/s/AKfycby5S5vpcyUXbVryqhvg6v7tx3eTwTcC-_pRRVuG5bZP1x0eKOW6IOtRl7cwCZmGyP_-/exec" method="POST" target="waitlist_iframe">
+              action="https://script.google.com/macros/s/AKfycby5S5vpcyUXbVryqhvg6v7tx3eTwTcC-_pRRVuG5bZP1x0eKOW6IOtRl7cwCZmGyP_-/exec" method="POST" target="_blank">
           <input type="text" name="hp" autocomplete="off" style="display:none">
           <div class="row">
             <label>Email</label>
@@ -100,19 +100,9 @@
           </div>
           <input type="hidden" name="source" value="site_home">
           <button type="submit" class="cta-button">Join the Waitlist</button>
-          <p id="waitlist-msg" style="margin-top:10px;opacity:.85"></p>
+          <p id="waitlist-msg" style="margin-top:10px;opacity:.85">After submitting, a new tab will open with the server's JSON. Share that result with me.</p>
         </form>
-        <script>
-          (function(){
-            var form = document.getElementById('waitlist-form');
-            var msg = document.getElementById('waitlist-msg');
-            form.addEventListener('submit', function(){
-              msg.textContent = 'Sending…';
-              msg.style.color = '#9ae6ff';
-              setTimeout(function(){ msg.textContent = 'All set — you are on the list.'; form.reset(); }, 1200);
-            });
-          })();
-        </script>
+        
 </div>
     </section>
   </main>
