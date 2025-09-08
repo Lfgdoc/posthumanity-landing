@@ -84,7 +84,7 @@ loop();
 
 
 // ===== Waitlist submit → Google Apps Script (native) =====
-const WAITLIST_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxYBFa5WdZt8X4O4016EZsDOO1GkophtfHbc9rWSK19Q7Wb7vB1-xmfiBKYX3JUR83D/exec';
+const WAITLIST_ENDPOINT = 'https://script.google.com/macros/s/AKfycby5S5vpcyUXbVryqhvg6v7tx3eTwTcC-_pRRVuG5bZP1x0eKOW6IOtRl7cwCZmGyP_-/exec';
 (function initWaitlist() {
   const form = document.querySelector('#waitlist-form');
   if (!form) return;
