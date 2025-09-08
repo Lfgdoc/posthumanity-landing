@@ -81,3 +81,39 @@ loop();
     }, {capture:true});
   });
 })();
+
+
+// ===== Waitlist submit → Google Apps Script (native) =====
+const WAITLIST_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxYBFa5WdZt8X4O4016EZsDOO1GkophtfHbc9rWSK19Q7Wb7vB1-xmfiBKYX3JUR83D/exec';
+(function initWaitlist() {
+  const form = document.querySelector('#waitlist-form');
+  if (!form) return;
+  const msgEl = document.querySelector('#waitlist-msg');
+  form.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    const params = new URLSearchParams(new FormData(form));
+    const btn = form.querySelector('button[type="submit"]');
+    const prev = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending…';
+    try {
+      const res = await fetch(WAITLIST_ENDPOINT, { method:'POST', body: params });
+      let data = {}; try { data = await res.json(); } catch(_){}
+      if (data.ok || res.ok) {
+        if (data.status === 'already_registered') {
+          msgEl.textContent = 'You are already on the list. Welcome back!';
+        } else {
+          msgEl.textContent = 'All set — you are on the list.';
+        }
+        msgEl.style.color = '#9ae6ff';
+        form.reset();
+      } else {
+        throw new Error(data.error || 'submit_failed');
+      }
+    } catch (err) {
+      msgEl.textContent = 'Sorry, something went wrong. Please try again.';
+      msgEl.style.color = '#ff9aa2';
+    } finally {
+      btn.disabled = false; btn.textContent = prev;
+    }
+  });
+})();

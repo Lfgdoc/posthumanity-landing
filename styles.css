@@ -113,3 +113,9 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
   transition:background .2s, transform .2s;
 }
 .cta-button:hover { background:rgba(154,230,255,.3); transform:translateY(-1px); }
+
+/* waitlist rows */
+.form .row{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.form label{font-size:.9rem;color:rgba(255,255,255,.85)}
+.form input{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 12px;color:#e6f7ff}
+.form input::placeholder{color:rgba(255,255,255,.5)}

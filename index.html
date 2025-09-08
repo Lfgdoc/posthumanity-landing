@@ -78,12 +78,27 @@
     <section class="section">
       <div class="container">
         <h2 class="section-title">Waitlist</h2>
-        <form action="https://formspree.io/f/xyzdbqlb" method="POST" class="form" onsubmit="return true;">
-          <input type="email"   name="email"   placeholder="Your email" required />
-          <input type="text"    name="twitter" placeholder="your X handle" required />
-          <input type="text"    name="wallet"  placeholder="Your BTC/Runes wallet" required />
-          <button class="btn primary" type="submit">Join the Waitlist</button>
+        
+        <!-- Waitlist — Native form posting to Google Apps Script -->
+        <form id="waitlist-form" class="form" style="max-width:900px;margin:8px auto 0;">
+          <input type="text" name="hp" autocomplete="off" style="display:none">
+          <div class="row">
+            <label>Email</label>
+            <input type="email" name="email" required placeholder="you@email.com">
+          </div>
+          <div class="row">
+            <label>X / Twitter (optional)</label>
+            <input type="text" name="twitter" placeholder="@handle">
+          </div>
+          <div class="row">
+            <label>Wallet address</label>
+            <input type="text" name="wallet" required placeholder="bc1..., 0x..., etc.">
+          </div>
+          <input type="hidden" name="source" value="site_home">
+          <button type="submit" class="cta-button">Join the Waitlist</button>
+          <p id="waitlist-msg" style="margin-top:10px;opacity:.85"></p>
         </form>
+
       </div>
     </section>
   </main>
